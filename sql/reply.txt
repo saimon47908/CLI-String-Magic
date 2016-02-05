@@ -1,0 +1,30 @@
+# ответ на вопрос 1
+SELECT h.name name, GROUP_CONCAT(vd.name) distinations
+FROM human h
+LEFT JOIN human_vacation_dist hvd ON hvd.human_id = h.id
+LEFT JOIN vacation_dist vd ON vd.id = hvd.distination_id
+GROUP BY h.id;
+
+# ответ на вопрос 2
+
+SELECT h.name name
+FROM human h
+LEFT JOIN human_vacation_dist hvd ON hvd.human_id = h.id
+LEFT JOIN vacation_dist vd ON vd.id = hvd.distination_id
+WHERE vd.name
+IN (
+'Cuba',  'Sochi'
+)
+GROUP BY h.id
+HAVING SUM( vd.name =  'Cuba' ) >0
+AND SUM( vd.name =  'Sochi' ) >0;
+
+# ответ на вопрос 3
+SELECT h.name name
+FROM human h
+LEFT JOIN human_vacation_dist hvd ON hvd.human_id = h.id
+LEFT JOIN vacation_dist vd ON vd.id = hvd.distination_id
+GROUP BY h.id
+HAVING COUNT(vd.name) =2
+AND SUM( vd.name =  'Cuba' ) >0
+AND SUM( vd.name =  'Sochi' ) >0;
