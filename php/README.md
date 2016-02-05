@@ -15,6 +15,8 @@ output: !dlrw llH
 
 ##Решение:
 
-cli.php - консольный скрипт
-Magic.php - класс для работы со строкой
-MagicTest.php - тесты для класса Magic
+* cli.php - консольный скрипт
+
+* Magic.php - класс для работы со строкой
+
+* MagicTest.php - тесты для класса Magic
