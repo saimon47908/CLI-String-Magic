@@ -36,8 +36,6 @@ class Test extends PHPUnit_Framework_TestCase{
             'Magic', 'magic'
         );
 
-        $method->setAccessible(true);
-
         $string = 'Hello World!';
         $modifyString = '!dlrW llH';
 
