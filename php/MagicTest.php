@@ -1,6 +1,6 @@
 <?php
 
-require_once('strMagicFunc.php');
+require_once('Magic.php');
 
 class Test extends PHPUnit_Framework_TestCase{
 
